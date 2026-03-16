@@ -1,5 +1,8 @@
 # Nostr-Scripts
 
+> Gonna impl this later some time, rn just collecting my ideas.
+> Probably gonna make it after making bitcoinatlas
+
 Nostr-Scripts is an isolation-first layer built around scripts and their local state, anchored to Bitcoin with a single 32-byte hash per batch, and using open networks like Nostr alongside external payment systems such as Lightning, Ark v2, Fedimint, or on-chain Bitcoin for value movement.
 
 It is not a global virtual machine and not a shared account ledger.
@@ -105,3 +108,7 @@ External systems handle value.
 Bitcoin provides the anchor.
 
 Users verify only the part of the world they touch — nothing more.
+
+## New ideas
+
+We don't need scripts to be bind to aggrigators. We can have a aggrigator market, aggregating and anchoring calls with a proof of work.
