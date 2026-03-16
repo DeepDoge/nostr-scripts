@@ -1,6 +1,6 @@
-# Rollupstr
+# Nostr-Scripts
 
-Rollupstr is an isolation-first layer built around scripts and their local state, anchored to Bitcoin with a single 32-byte hash per batch, and using open networks like Nostr alongside external payment systems such as Lightning, Ark v2, Fedimint, or on-chain Bitcoin for value movement.
+Nostr-Scripts is an isolation-first layer built around scripts and their local state, anchored to Bitcoin with a single 32-byte hash per batch, and using open networks like Nostr alongside external payment systems such as Lightning, Ark v2, Fedimint, or on-chain Bitcoin for value movement.
 
 It is not a global virtual machine and not a shared account ledger.
 
@@ -10,7 +10,7 @@ Each user only downloads and replays the script states they actually care about 
 
 ## Core Idea
 
-Rollupstr is built on the idea of isolated script states.
+Nostr-Scripts is built on the idea of isolated script states.
 
 A script is a small, self-contained state machine.
 It defines its own ID, its own state or state root, a sequence of state **transactions**, optional dependencies on other scripts, and optional references to external payment proofs.
@@ -22,13 +22,13 @@ Your client only interacts with the minimal dependency graph required for your a
 
 ## Data Flow
 
-Rollupstr separates responsibilities across three layers:
+Nostr-Scripts separates responsibilities across three layers:
 
 1. **State and logic** — stored in scripts and their transactions.
 2. **Transport and availability** — Nostr or any broadcast layer for discovering transactions.
 3. **Settlement and finality** — Bitcoin anchoring each batch with a 32-byte commitment.
 
-Payments happen externally and are not tracked inside Rollupstr.
+Payments happen externally and are not tracked inside Nostr-Scripts.
 
 ---
 
@@ -43,7 +43,7 @@ The transactions stay off-chain; Bitcoin only commits the hash.
 
 ## What a Client Actually Does
 
-A Rollupstr client does not download or replay a global rollup.
+A Nostr-Scripts client does not download or replay a global rollup.
 
 It only:
 
@@ -58,7 +58,7 @@ Your entire node consists of a few scripts, their transactions, their proofs, an
 
 ## External Payments
 
-Rollupstr does not become a balance ledger.
+Nostr-Scripts does not become a balance ledger.
 Value moves in systems that supply client-verifiable receipts, such as Lightning, Ark v2, Fedimint, or on-chain Bitcoin.
 
 Scripts may require those proofs:
@@ -67,7 +67,7 @@ Scripts may require those proofs:
 * “This action requires a valid Ark spend proof.”
 * “This transaction depends on an on-chain payment receipt.”
 
-Rollupstr never tracks full payment histories.
+Nostr-Scripts never tracks full payment histories.
 It only validates the provided proofs according to the script rules.
 
 ---
@@ -95,7 +95,7 @@ From these, the client reconstructs the script state and its anchoring to Bitcoi
 
 ## Mental Model
 
-Rollupstr is not a blockchain.
+Nostr-Scripts is not a blockchain.
 
 It is a structure for verifiable, local script states that anchor collectively to Bitcoin without global replication.
 
