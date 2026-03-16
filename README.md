@@ -46,7 +46,7 @@ The transactions stay off-chain; Bitcoin only commits the hash.
 
 ## What a Client Actually Does
 
-A Nostr-Scripts client does not download or replay a global rollup.
+A Nostr-Scripts client does not download or replay a global history.
 
 It only:
 
